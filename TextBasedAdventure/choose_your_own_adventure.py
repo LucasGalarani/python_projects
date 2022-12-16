@@ -43,3 +43,7 @@ if setting == 'jungle':
     else:
         print('Invalid response! you lose!')
         quit()
+        
+
+if setting == 'dungeon':
+    print('Welcome to the Undermountain! You take a torch and walk...')
