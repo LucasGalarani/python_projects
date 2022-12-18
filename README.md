@@ -9,3 +9,4 @@ https://www.upgrad.com/blog/python-projects-ideas-topics-beginners/ - UpGrad Blo
 
 
 Not used for commerce,just to study
+Não são projetos proprios mas com aprendizado e com incrementos que poderia ser colocados
