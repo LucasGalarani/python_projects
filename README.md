@@ -8,4 +8,5 @@ https://www.youtube.com/@freecodecamp - Free Code Camp<br>
 https://www.upgrad.com/blog/python-projects-ideas-topics-beginners/ - UpGrad Blog<br>
 
 
-Not used for commerce,just to study
+Not used for commerce,just to study<br>
+Não são projetos proprios mas com aprendizado e com incrementos que poderia ser colocados
