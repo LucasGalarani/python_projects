@@ -1,8 +1,9 @@
 import random
 
-palavras = ['brasil', 'jogo', 'kate perry', 'Jeniffer', 'Elefante', 'Pudim', 'Brigadeiro', 'Beans', 'Coconut', 'Rice', 'Jelly', 'Microsoft', 'Adobe', 'Javascript', 'Pararelepipedo', 'Nozes', 'Cake', 'Sugar', 'Python', 'Lucas', 'Anthony']
+palavras = ['brasil', 'jogo', 'kate perry', 'jeniffer', 'elefante', 'pudim', 'brigadeiro', 'beans', 'coconut', 'rice', 'jelly', 'microsoft', 'adobe', 'javascript', 'pararelepipedo', 'nozes', 'cake', 'sugar', 'python', 'lucas', 'anthony']
 
 palavra = random.choice(palavras)
+
 
 tentativas = 0
 
@@ -17,12 +18,44 @@ print('Seu objetivo é acertar a palavra secreta')
 print('Regras: ')
 print('1- Você terá', chances,'tentativas para descobrir a palavra;')
 print('2- Você só pode digitar uma palavra por vez;')
-print('Ao acertar a letra ela irá ser colocada na palavra oculta')
+print('3- Ao acertar a letra ela irá ser colocada na palavra oculta')
 
-while tentativas <= chances:
-    letra = input('Qual letra você gostaria de colocar na palavra? ')
-    if letra in palavra:
-        print('Parabéns,você acertou!')
-    else:
-        print('Você errou,tente outra vez.')
-        tentativas += 1
+while tentativas < chances and ''.join(estado_atual) != palavra:
+
+	letra = input("\n\nQual letra você quer tentar? ")
+
+	while letra in letras_escolhidas:
+		print ("Você escolheu uma letra que já tinha tentado, escolha outra")
+		letra = input("\nQual letra você quer tentar? ")
+
+	letras_escolhidas.append(letra)
+
+	if letra in palavra:
+		print ("Parabéns, você acertou a letra!")
+		for i in range(len(palavra)):
+			if letra == palavra[i]:
+				estado_atual[i] = letra
+	else:
+		print ("Que pena, você errou!")
+		tentativas = tentativas + 1
+
+	# quantas tentativas ele tem
+	print ("Você já fez", tentativas, "tentativas erradas e ainda tem", chances-tentativas, "tentativas" )
+
+	# qual o estado atual da palavra
+	print ("Esse é o estado atual:")
+	print (estado_atual)
+
+	# quais as letras ele já tentou
+	print ("As letras que você já tentou são:")
+	for item in letras_escolhidas:
+		print (item, end=" ")
+
+# fazer um final pro jogo
+if tentativas == chances:
+	print ("\n\nVocê perdeu")
+	print ("Acabaram suas tentativas")
+else:
+	print ("\n\nVocê ganhou, parabéns")
+
+print ("A palavra era", palavra)
